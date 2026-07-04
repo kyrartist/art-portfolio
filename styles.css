@@ -37,6 +37,8 @@ h3 {
 header {
   border-bottom: var(--blue-light) 1px solid;
   background-color: var(--white);
+  position: sticky;
+  top: 0;
 }
 
 #nav-bar {
@@ -101,8 +103,26 @@ header {
 
 #home {
   text-align: center;
-  /* background-color: lightseagreen; */
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  border-bottom: #dfe7ff solid 1px;
+
+  /* background-image: url(assets/Hero_Drawing.png);
+  background-position: center; */
+  /* background-size: cover; */
+
+  /* dotted grid */
+  /* background-size: 40px 40px;
+  background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px); */
+
+  /* grid */
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, var(--blue-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--blue-light) 1px, transparent 1px);
 }
 
 #home h1 {
@@ -111,7 +131,7 @@ header {
 }
 
 #home h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
   color: var(--black);
@@ -127,9 +147,15 @@ header {
   text-align: center;
 }
 
+#work h2 {
+  margin-bottom: 16px;
+}
+
 #categories {
   display: flex;
   width: 100%;
+  justify-content: center;
+  gap: 24px;
 }
 
 .category:hover {
@@ -148,7 +174,6 @@ header {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
-  padding: 30px 100px;
 }
 
 #about-pic img {
@@ -223,5 +248,9 @@ header {
 @media screen and (min-width: 1000px) {
   .container {
     width: 1000px;
+  }
+
+  #about .container {
+    padding: 30px 100px;
   }
 }
