@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyra Lee | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body id="#">
     <header>
       <nav id="nav-bar" class="container">
         <div id="logo">
-          <a href="#home">
+          <a href="#">
             <img src="assets/Star.png" alt="Kyra Lee" />
           </a>
         </div>
@@ -29,30 +33,77 @@
           <a class="nav-link" href="#work">My Work</a>
           <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#contact">Contact</a>
+          <a
+            class="social-icon"
+            href="https://www.instagram.com/kyrartist/"
+            target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
         </div>
       </nav>
     </header>
 
     <main>
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close image">×</button>
+        <img id="lightbox-image" src="" alt="" />
+      </div>
       <section id="home">
         <div class="container">
           <h1>Kyra Lee</h1>
           <h2>Illustrator & Designer</h2>
-          <!-- <img src="assets/Hero_Drawing.png" alt="" /> -->
         </div>
       </section>
 
       <section id="work" class="container">
-        <h2>My Work</h2>
-        <div id="categories">
-          <div class="category">
-            <p>Illustration</p>
+        <div>
+          <h2>My Work</h2>
+          <div id="categories">
+            <div class="category">
+              <p>Illustration</p>
+            </div>
+            <div class="category">
+              <p>Books</p>
+            </div>
+            <div class="category">
+              <p>Design</p>
+            </div>
           </div>
-          <div class="category">
-            <p>Books</p>
+        </div>
+
+        <div class="masonry-container">
+          <div class="masonry-item">
+            <img src="assets/illustration/Frozen_Pines.webp" alt="Item 1" />
           </div>
-          <div class="category">
-            <p>Design</p>
+          <div class="masonry-item">
+            <img src="assets/illustration/Get_Up Blood.webp" alt="Item 2" />
+          </div>
+          <div class="masonry-item">
+            <img
+              src="assets/illustration/It_All_Comes_Back.webp"
+              alt="Item 3"
+            />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+          </div>
+          <div class="masonry-item">
+            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
           </div>
         </div>
       </section>
@@ -62,11 +113,11 @@
           <div>
             <h2>A little about me</h2>
             <p>
-              Hi! I’m Kyra Lee, an illustrator with a love for visual
-              storytelling through bold, character-focused art. I received a BA
-              in Psychology with a minor in Digital Arts & Media from The
-              University of Texas at Austin in 2025 and have illustrated for
-              several special edition books throughout the past 3 years.<br />
+              Hi! I’m Kyra, an illustrator with a love for visual storytelling
+              through bold, character-focused art. I received a BA in Psychology
+              with a minor in Digital Arts & Media from The University of Texas
+              at Austin in 2025 and have illustrated for several special edition
+              books throughout the past 3 years.<br />
               <br />
               If I’m not drawing, I’m probably reading, running, becoming
               obsessed with a new piece of media, or hugging my cat.
