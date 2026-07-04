@@ -61,3 +61,24 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const categories = document.querySelectorAll(".category");
+const categoryGrids = {
+  Books: document.getElementById("books-grid"),
+  Illustration: document.getElementById("illustration-grid"),
+  Design: document.getElementById("design-grid"),
+};
+
+categories.forEach((category) => {
+  category.addEventListener("click", () => {
+    const selectedCategory = category.textContent.trim();
+
+    categories.forEach((item) => item.classList.remove("active"));
+    category.classList.add("active");
+
+    Object.entries(categoryGrids).forEach(([name, grid]) => {
+      if (grid) {
+        grid.hidden = name !== selectedCategory;
+      }
+    });
+  });
+});
