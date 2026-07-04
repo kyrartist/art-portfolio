@@ -60,3 +60,4 @@ document.addEventListener("keydown", (event) => {
     closeLightbox();
   }
 });
+

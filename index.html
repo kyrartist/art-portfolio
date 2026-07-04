@@ -48,6 +48,7 @@
         <button class="lightbox-close" aria-label="Close image">×</button>
         <img id="lightbox-image" src="" alt="" />
       </div>
+
       <section id="home">
         <div class="container">
           <h1>Kyra Lee</h1>
@@ -56,14 +57,14 @@
       </section>
 
       <section id="work" class="container">
-        <div>
+        <div id="categories-container">
           <h2>My Work</h2>
           <div id="categories">
-            <div class="category">
-              <p>Illustration</p>
+            <div class="category active" >
+              <p>Books</p>
             </div>
             <div class="category">
-              <p>Books</p>
+              <p>Illustration</p>
             </div>
             <div class="category">
               <p>Design</p>
@@ -71,42 +72,82 @@
           </div>
         </div>
 
-        <div class="masonry-container">
-          <div class="masonry-item">
-            <img src="assets/illustration/Frozen_Pines.webp" alt="Item 1" />
+        <div id="books-grid">
+          <div class="masonry-container">
+            <div class="masonry-item">
+              <img src="assets/books/In the Name of the Mother.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/Katabasis.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/Project Hail Mary.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/The Secret History.jpg" alt="" />
+            </div>
           </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Get_Up Blood.webp" alt="Item 2" />
+        </div>
+
+        <div id="illustration-grid" style="display: none">
+          <div class="masonry-container">
+            <div class="masonry-item">
+              <img src="assets/illustration/Frozen_Pines.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/Get_Up Blood.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/It_All_Comes_Back.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/Rocky_And_Ryland.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img
+                src="assets/illustration/vicious comic quote final.webp"
+                alt=""
+              />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/vicious poster final.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img
+                src="assets/illustration/victor vale rises final.webp"
+                alt=""
+              />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/Who_Laughs_Last.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/World_Ender.webp" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/illustration/Punk_Rockers.webp" alt="" />
+            </div>
           </div>
-          <div class="masonry-item">
-            <img
-              src="assets/illustration/It_All_Comes_Back.webp"
-              alt="Item 3"
-            />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
-          </div>
-          <div class="masonry-item">
-            <img src="assets/illustration/Punk_Rockers.webp" alt="Item 4" />
+        </div>
+
+        <div id="design-grid">
+          <div class="masonry-container">
+            <div class="masonry-item">
+              <img src="assets/books/In the Name of the Mother.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/Katabasis.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/Project Hail Mary.jpg" alt="" />
+            </div>
+            <div class="masonry-item">
+              <img src="assets/books/The Secret History.jpg" alt="" />
+            </div>
           </div>
         </div>
       </section>
+      
 
       <section id="about">
         <div class="container">

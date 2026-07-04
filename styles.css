@@ -22,10 +22,18 @@
   margin: 0;
 }
 
+html {
+  scroll-padding-top: 100px;
+}
+
 body {
   background-color: var(--white);
   color: var(--black);
   font-family: "Karla", sans-serif;
+}
+
+section {
+  margin-bottom: 50px;
 }
 
 h1,
@@ -167,22 +175,29 @@ header {
 
 #work {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 #work h2 {
   margin-bottom: 16px;
 }
 
+.active {
+  color: var(--blue);
+}
+
 #categories {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 300px;
+  margin: 0 auto 32px auto;
   justify-content: center;
   gap: 24px;
 }
 
 .masonry-container {
   column-count: 4;
-  column-gap: 1.5rem;
+  column-gap: 1rem;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -190,11 +205,11 @@ header {
 
 .masonry-item {
   break-inside: avoid;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: var(--white);
   border-radius: 8px;
+  border: var(--black) solid 1px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.06);
 }
 
 .masonry-item img {
@@ -202,7 +217,7 @@ header {
   display: block;
   height: auto;
   object-fit: cover;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .lightbox {
@@ -228,12 +243,11 @@ header {
 
 .lightbox img {
   max-width: min(90vw, 900px);
-  max-height: min(85vh, 800px);
+  max-height: min(90vh, 800px);
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -258,6 +272,7 @@ header {
 
 .category:hover {
   cursor: pointer;
+  color: var(--blue);
 }
 
 #about {
