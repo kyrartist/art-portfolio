@@ -58,18 +58,23 @@ p {
 header {
   outline: var(--blue-light) 1px solid;
   background-color: var(--white);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100vw;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
 }
 
 #nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
   top: 0;
   padding: 25px;
-  z-index: 100;
 }
 
 #logo {
