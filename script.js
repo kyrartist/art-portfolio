@@ -18,14 +18,17 @@ if (menuToggle && navLinks) {
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
+const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
-const masonryItems = document.querySelectorAll(".masonry-item img");
 
-function openLightbox(src, alt) {
+function openLightbox(src, alt, caption = "") {
   if (!lightbox || !lightboxImage) return;
 
   lightboxImage.src = src;
   lightboxImage.alt = alt;
+  if (lightboxCaption) {
+    lightboxCaption.textContent = caption;
+  }
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden", "false");
 }
@@ -37,10 +40,19 @@ function closeLightbox() {
   lightbox.setAttribute("aria-hidden", "true");
 }
 
-masonryItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    openLightbox(item.src, item.alt);
-  });
+document.addEventListener("click", (event) => {
+  const clickedImage = event.target.closest(
+    ".masonry-item img, .project-image img",
+  );
+
+  if (clickedImage) {
+    event.preventDefault();
+    openLightbox(
+      clickedImage.currentSrc || clickedImage.src,
+      clickedImage.alt,
+      clickedImage.dataset.caption || "",
+    );
+  }
 });
 
 if (lightboxClose) {
@@ -83,21 +95,21 @@ categories.forEach((category) => {
   });
 });
 
-const header = document.querySelector('header');
+const header = document.querySelector("header");
 let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   // Optional: Don't hide the navbar if the user hasn't scrolled past its height
   if (window.scrollY < 150) {
-    header.classList.remove('header-hidden');
+    header.classList.remove("header-hidden");
     return;
   }
 
   if (lastScrollY < window.scrollY) {
-    header.classList.add('header-hidden');
+    header.classList.add("header-hidden");
   } else {
-    header.classList.remove('header-hidden');
+    header.classList.remove("header-hidden");
   }
-  
+
   lastScrollY = window.scrollY;
 });

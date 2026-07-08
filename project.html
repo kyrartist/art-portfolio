@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Detail | Kyra Lee</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="nav-bar" class="container">
+        <div id="logo">
+          <a href="index.html">
+            <img src="assets/Star.png" alt="" />
+          </a>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+          <a class="nav-link" href="index.html#work">My Work</a>
+          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close image">×</button>
+      <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="" />
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <main class="container project-page">
+      <a class="button back-link" href="index.html#work">← Back to portfolio</a>
+      <article id="project-detail" class="project-detail-card">
+        <p class="project-eyebrow" id="project-category">Project</p>
+        <h1 id="project-title">Project title</h1>
+        <p id="project-overview" class="project-overview"></p>
+
+        <div class="project-meta">
+          <div>
+            <span>Role</span>
+            <p id="project-role"></p>
+          </div>
+          <div>
+            <span>Medium</span>
+            <p id="project-medium"></p>
+          </div>
+          <div>
+            <span>Year</span>
+            <p id="project-year"></p>
+          </div>
+        </div>
+
+        <div class="project-image-grid" id="project-images"></div>
+
+        <div class="project-body">
+          <div>
+            <h2>Project story</h2>
+            <p id="project-story"></p>
+          </div>
+          <div>
+            <h2>Highlights</h2>
+            <ul id="project-highlights"></ul>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      const projects = {
+        vicious: {
+          category: "Book design",
+          title: "Vicious",
+          overview:
+            "A special edition book project featuring endpapers, overlays, and die-cut stickers for a bold, atmospheric reading experience.",
+          role: "Illustrator & Designer",
+          medium: "Printed book extras",
+          year: "2024",
+          story:
+            "This project focused on building a tactile, collectible feel that matched the tension and mood of the story. The artwork was designed to feel immersive while still staying elegant and readable on the page.",
+          highlights: [
+            "Created layered endpapers and overlays",
+            "Designed sticker elements that feel collectible",
+            "Balanced visual drama with book formatting constraints",
+          ],
+          images: [
+            {
+              src: "assets/vicious-project/thud thud thud.png",
+              caption:
+                "A dramatic close-up that captures the energy of the opening scene and sets the mood for the full project.",
+            },
+            {
+              src: "assets/vicious-project/vic syd meet.png",
+              caption:
+                "This moment focuses on the chemistry between the two central characters and the tension that carries through the story.",
+            },
+            {
+              src: "assets/vicious-project/eli_eo_scene.png",
+              caption:
+                "A layered composition that blends character detail with an atmospheric setting to feel cinematic and immersive.",
+            },
+            {
+              src: "assets/vicious-project/overlay-victor-eo-scene.png",
+              caption:
+                "The overlay treatment adds texture and depth without overwhelming the main illustration, keeping the piece readable.",
+            },
+            {
+              src: "assets/vicious-project/citizen hero newspaper.png",
+              caption:
+                "A stylized newspaper-style element that introduces a playful narrative device while staying grounded in the book's tone.",
+            },
+            {
+              src: "assets/vicious-project/mitch hacking.png",
+              caption:
+                "This image emphasizes movement and intrigue, giving the scene a sense of urgency and momentum.",
+            },
+            {
+              src: "assets/vicious-project/overlay_IMadeAFriend.png",
+              caption:
+                "An expressive overlay piece that highlights the emotional connection between key moments in the story.",
+            },
+            {
+              src: "assets/vicious-project/syd resurrects dol.png",
+              caption:
+                "The visual language here leans into atmosphere and drama, with strong silhouettes that make the image feel memorable.",
+            },
+            {
+              src: "assets/vicious-project/vic_eli_call.png",
+              caption:
+                "A more intimate composition that draws attention to expression and character relationship rather than action alone.",
+            },
+            {
+              src: "assets/vicious-project/vic_eli_fight.png",
+              caption:
+                "The fight scene uses bold contrast and gesture to create a sense of motion and emotional stakes.",
+            },
+            {
+              src: "assets/vicious-project/vic sees eli at bar.png",
+              caption:
+                "The setting and composition help frame a quieter, more reflective moment within the larger narrative.",
+            },
+            {
+              src: "assets/vicious-project/overlay_EliSydneyBullet.png",
+              caption:
+                "The final overlay balances graphic impact with story clarity, tying the visual set together in a polished way.",
+            },
+          ],
+        },
+        lockwood: {
+          category: "Book design",
+          title: "Lockwood & Co",
+          overview:
+            "A decorative package of overlays and stickers for a modern fantasy title, designed to feel playful and mysterious.",
+          role: "Illustrator",
+          medium: "Sticker & overlay design",
+          year: "2023",
+          story:
+            "The goal was to make the added materials feel like an extension of the story world rather than simple decoration. The final pieces push a ghostly, cinematic tone with strong shape and contrast.",
+          highlights: [
+            "Developed a cohesive visual language for the series",
+            "Used layered textures to suggest mystery",
+            "Kept the extras visually readable in production",
+          ],
+          images: [
+            {
+              src: "assets/books/lockwood-project-card.jpg",
+              caption:
+                "A playful, ghostly treatment that helps the decorative extras feel like part of the story world.",
+            },
+            {
+              src: "assets/books/Katabasis.jpg",
+              caption:
+                "This image uses bold contrast and layered texture to create a mysterious, cinematic finish.",
+            },
+          ],
+        },
+        vengeful: {
+          category: "Book design",
+          title: "Vengeful",
+          overview:
+            "A companion project that extended the visual identity of the series with a more dramatic and polished finish.",
+          role: "Illustrator & Designer",
+          medium: "Endpapers, overlays, stickers",
+          year: "2024",
+          story:
+            "This iteration leaned into the darker emotional tone of the book while keeping the design approachable and collectible. It was a strong exercise in balancing atmosphere with clarity.",
+          highlights: [
+            "Expanded the series design system",
+            "Refined color and contrast for impact",
+            "Integrated decorative elements without overcrowding the page",
+          ],
+          images: [
+            {
+              src: "assets/books/lockwood-project-card.jpg",
+              caption:
+                "A darker visual direction that emphasizes mood and atmosphere while remaining polished and readable.",
+            },
+            {
+              src: "assets/books/The Secret History.jpg",
+              caption:
+                "The composition leans into elegance and tension, giving the material a more reflective tone.",
+            },
+          ],
+        },
+        artemis: {
+          category: "Book design",
+          title: "Artemis Fowl",
+          overview:
+            "A sleek, playful project that brought a whimsical tone to the printed extras while remaining polished and professional.",
+          role: "Illustrator",
+          medium: "Overlays",
+          year: "2022",
+          story:
+            "The design focused on movement, curiosity, and personality, allowing the overlays to support the book without overwhelming it. The final result feels fun and polished at the same time.",
+          highlights: [
+            "Created layered decorative pieces",
+            "Used playful composition to support the tone",
+            "Delivered a clean editorial finish",
+          ],
+          images: [
+            {
+              src: "assets/books/lockwood-project-card.jpg",
+              caption:
+                "A clean, playful decorative element designed to bring energy to the page without overwhelming it.",
+            },
+            {
+              src: "assets/books/Project Hail Mary.jpg",
+              caption:
+                "This piece balances curiosity and motion, giving the project a warm and adventurous feel.",
+            },
+          ],
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const key = params.get("project") || "vicious";
+      const project = projects[key] || projects.vicious;
+
+      document.getElementById("project-category").textContent =
+        project.category;
+      document.getElementById("project-title").textContent = project.title;
+      document.getElementById("project-overview").textContent =
+        project.overview;
+      document.getElementById("project-role").textContent = project.role;
+      document.getElementById("project-medium").textContent = project.medium;
+      document.getElementById("project-year").textContent = project.year;
+      document.getElementById("project-story").textContent = project.story;
+
+      const imageGrid = document.getElementById("project-images");
+      project.images.forEach((item) => {
+        const imageData =
+          typeof item === "string" ? { src: item, caption: "" } : item;
+        const imageWrap = document.createElement("div");
+        imageWrap.className = "project-image";
+        const image = document.createElement("img");
+        image.src = imageData.src;
+        image.alt = imageData.caption || project.title;
+        image.dataset.caption = imageData.caption || "";
+        imageWrap.appendChild(image);
+
+        if (imageData.caption) {
+          const overlay = document.createElement("div");
+          overlay.className = "project-image-overlay";
+          const caption = document.createElement("p");
+          caption.className = "project-image-caption";
+          caption.textContent = imageData.caption;
+          overlay.appendChild(caption);
+          imageWrap.appendChild(overlay);
+        }
+
+        imageGrid.appendChild(imageWrap);
+      });
+
+      const highlights = document.getElementById("project-highlights");
+      project.highlights.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        highlights.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

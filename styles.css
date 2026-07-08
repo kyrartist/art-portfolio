@@ -41,7 +41,7 @@ body {
 }
 
 section {
-  margin-bottom: 50px;
+  margin-bottom: 6rem !important;
 }
 
 h1,
@@ -195,7 +195,7 @@ header {
 
 #work {
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 6rem; */
 }
 
 #work h2 {
@@ -242,7 +242,7 @@ header {
 }
 
 #grid-container {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .masonry-container {
@@ -280,8 +280,15 @@ header {
 }
 
 .project-card {
+  display: block;
   text-align: left;
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card:hover h3 {
+  color: var(--blue);
 }
 
 .project-img-frame {
@@ -325,10 +332,137 @@ header {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 10rem;
+  display: inline-block;
 }
 
 .button::before {
   content: "✦ ";
+}
+
+.project-page {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.back-link {
+  margin-bottom: 2rem;
+}
+
+.project-detail-card {
+  background: var(--white);
+  border: 1px solid var(--blue-light);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(51, 78, 250, 0.08);
+}
+
+.project-eyebrow {
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.project-overview {
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-meta div {
+  background: var(--blue-light);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.project-meta span {
+  display: block;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+
+.project-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--blue-light);
+  display: block;
+  cursor: pointer;
+}
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem;
+  background: linear-gradient(
+    180deg,
+    transparent 20%,
+    rgba(30, 30, 30, 0.8) 100%
+  );
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.project-image:hover .project-image-overlay,
+.project-image:focus-within .project-image-overlay {
+  opacity: 1;
+}
+
+.project-image-caption {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+
+.project-body h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-body ul {
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.project-body li {
+  line-height: 1.5;
 }
 
 .lightbox {
@@ -351,6 +485,13 @@ header {
   opacity: 1;
   visibility: visible;
   z-index: 200;
+}
+
+.lightbox-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: min(95vw, 1100px);
 }
 
 .lightbox img {
@@ -379,6 +520,19 @@ header {
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.lightbox-caption {
+  color: var(--white);
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 280px;
+  flex: 0 0 280px;
+}
+
+.lightbox-caption:empty {
+  display: none;
 }
 
 #about {
@@ -430,7 +584,7 @@ header {
 #contact {
   text-align: center;
   background-color: var(--black);
-  color: var(--blue-light);
+  color: var(--white);
   width: 100%;
   height: 25vh;
 }
@@ -444,6 +598,10 @@ header {
 @media screen and (max-width: 768px) {
   .masonry-container {
     column-count: 2;
+  }
+
+  .project-image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   #about .container {
@@ -503,7 +661,7 @@ header {
 
 @media screen and (min-width: 1000px) {
   .container {
-    width: 900px;
+    width: 1000px;
   }
 
   #about .container {
