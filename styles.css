@@ -395,7 +395,7 @@ header {
 
 .project-image-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -424,8 +424,8 @@ header {
   padding: 0.9rem;
   background: linear-gradient(
     180deg,
-    transparent 20%,
-    rgba(30, 30, 30, 0.8) 100%
+    transparent 5%,
+    rgba(30, 30, 30, 0.95) 100%
   );
   color: var(--white);
   opacity: 0;
@@ -602,6 +602,17 @@ header {
 
   .project-image-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lightbox-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lightbox-caption {
+    max-width: 100%;
+    flex-basis: auto;
+    text-align: center;
   }
 
   #about .container {

@@ -99,7 +99,6 @@ const header = document.querySelector("header");
 let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {
-  // Optional: Don't hide the navbar if the user hasn't scrolled past its height
   if (window.scrollY < 150) {
     header.classList.remove("header-hidden");
     return;
