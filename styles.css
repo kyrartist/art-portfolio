@@ -177,11 +177,12 @@ header {
 
 #home h1 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 4rem;
+  /* font-size: 4rem; */
+  font-size: clamp(2.9rem, 4vw + 1.5rem, 4rem);
 }
 
 #home h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
   color: var(--black);
@@ -349,6 +350,17 @@ header {
   margin-bottom: 2rem;
 }
 
+#project-top {
+  position: absolute;
+  top: 0;
+}
+
+#project-back-to-top-button {
+  margin: 3rem auto 0;
+  display: block;
+  width: fit-content;
+}
+
 .project-detail-card {
   background: var(--white);
   border: 1px solid var(--blue-light);
@@ -399,6 +411,11 @@ header {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.project-image-grid--compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1.5rem;
 }
 
 .project-image {
