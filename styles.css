@@ -33,12 +33,14 @@
 
 html {
   scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--cream);
   color: var(--black);
   font-family: "Karla", sans-serif;
+  overflow-x: hidden;
 }
 
 section {
@@ -69,7 +71,8 @@ header {
   background-color: var(--cream);
   position: fixed;
   top: 0;
-  width: 100vw;
+  left: 0;
+  width: 100%;
   z-index: 100;
   transition: transform 0.5s ease-in-out;
 }
@@ -259,7 +262,6 @@ header {
   break-inside: avoid;
   margin-bottom: 16px;
   background: var(--cream);
-  /* border-radius: 8px; */
   border: var(--black) solid 1px;
   overflow: hidden;
 }
@@ -300,7 +302,6 @@ header {
   align-items: center;
   justify-content: center;
   border: var(--black) 1px solid;
-  /* border-radius: 8px; */
 }
 
 .project-card img {
@@ -366,7 +367,6 @@ header {
   border: 1px solid var(--blue-light);
   border-radius: 8px;
   padding: 2rem;
-  /* box-shadow: 0 10px 30px rgba(51, 68, 250, 0.08); */
 }
 
 .project-eyebrow {
@@ -421,14 +421,12 @@ header {
 .project-image {
   position: relative;
   overflow: hidden;
-  /* border-radius: 8px; */
 }
 
 .project-image img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  /* border-radius: 8px; */
   border: 1px solid var(--black);
   display: block;
   cursor: pointer;
@@ -577,14 +575,12 @@ header {
   width: 100%;
   height: auto;
   object-fit: cover;
-  /* border-radius: 8px; */
 }
 
 #about-pic {
   position: relative;
   width: 260px;
   display: block;
-  /* border-radius: 8px; */
   border: var(--cream) 1px solid;
   margin-left: auto;
   overflow: visible;
@@ -602,16 +598,63 @@ header {
 }
 
 #contact {
-  text-align: center;
   background-color: var(--blue);
   color: var(--white);
   width: 100%;
-  height: 25vh;
+}
+
+#contact-container {
+  text-align: center;
+  padding: 40px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  max-width: 600px;
+}
+
+#contact h2 {
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+#contact h2::before {
+  content: "✦ ";
+}
+
+#contact img {
+  display: block;
+  margin: auto;
+}
+
+#contact a {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+#socials {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 @media screen and (max-width: 480px) {
   .masonry-container {
     column-count: 1;
+  }
+
+  #contact-container {
+    padding: 16px;
+  }
+
+  #contact-container {
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  #contact img {
+    width: 40px;
   }
 }
 
@@ -696,7 +739,7 @@ header {
   }
 
   #about .container {
-    padding: 40px 100px;
+    padding: 40px 80px;
   }
 
   .masonry-container {
