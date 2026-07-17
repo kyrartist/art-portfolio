@@ -49,8 +49,8 @@
             <p id="project-medium"></p>
           </div>
           <div>
-            <span>Year</span>
-            <p id="project-year"></p>
+            <span>company</span>
+            <p id="project-company"></p>
           </div>
         </div>
 
@@ -60,16 +60,6 @@
         ></div>
         <div class="project-image-grid" id="project-images"></div>
 
-        <div class="project-body">
-          <div>
-            <h2>Project story</h2>
-            <p id="project-story"></p>
-          </div>
-          <div>
-            <h2>Highlights</h2>
-            <ul id="project-highlights"></ul>
-          </div>
-        </div>
         <a href="#project-top" id="project-back-to-top-button" class="button"
           >Back to top</a
         >
@@ -80,20 +70,13 @@
     <script>
       const projects = {
         vicious: {
-          category: "Book design",
+          category: "Special Edition",
           title: "Vicious",
-          overview:
-            "A special edition book project featuring endpapers, overlays, and die-cut stickers for a bold, atmospheric reading experience.",
+          overview: `A story of revenge, violence, and power—I had the honor of capturing the complicated relationship development between Victor and Eli from past to present in a set of endpapers
+            as well as 12 pivitol moments throughout the book in a pack of bold, comic-style overlays.`,
           role: "Illustrator & Designer",
           medium: "Endpapers, Page Overlays & Stickers",
-          year: "2024",
-          story:
-            "This project focused on building a tactile, collectible feel that matched the tension and mood of the story. The artwork was designed to feel immersive while still staying elegant and readable on the page.",
-          highlights: [
-            "Created layered endpapers and overlays",
-            "Designed sticker elements that feel collectible",
-            "Balanced visual drama with book formatting constraints",
-          ],
+          company: "LitPins&Co",
           compactImages: [
             {
               src: "assets/vicious-project/vicious_endpapers_front final.webp",
@@ -156,20 +139,13 @@
           ],
         },
         lockwood: {
-          category: "Book design",
+          category: "Special Edition",
           title: "Lockwood & Co",
           overview:
-            "A decorative package of overlays and stickers for a modern fantasy title, designed to feel playful and mysterious.",
+            "My second project with LitPins, this time for the creepy, yet charming Lockwood & Co series! My goal for these 15 page overlays was to push my composition, texture, and lighting to capture the character's spooky encounters throughout the series.",
           role: "Illustrator & Designer",
           medium: "Page Overlays & Stickers",
-          year: "2025",
-          story:
-            "The goal was to make the added materials feel like an extension of the story world rather than simple decoration. The final pieces push a ghostly, cinematic tone with strong shape and contrast.",
-          highlights: [
-            "Developed a cohesive visual language for the series",
-            "Used layered textures to suggest mystery",
-            "Kept the extras visually readable in production",
-          ],
+          company: "LitPins&Co",
           compactImages: [],
           images: [
             {
@@ -235,20 +211,13 @@
           ],
         },
         vengeful: {
-          category: "Book design",
+          category: "Special Edition",
           title: "Vengeful",
           overview:
             "A companion project that extended the visual identity of the series with a more dramatic and polished finish.",
           role: "Illustrator & Designer",
           medium: "Endpapers, overlays, stickers",
-          year: "2026",
-          story:
-            "This iteration leaned into the darker emotional tone of the book while keeping the design approachable and collectible. It was a strong exercise in balancing atmosphere with clarity.",
-          highlights: [
-            "Expanded the series design system",
-            "Refined color and contrast for impact",
-            "Integrated decorative elements without overcrowding the page",
-          ],
+          company: "LitPins&Co",
           compactImages: [
             {
               src: "assets/vengeful-project/Vengeful_Endpage_Front.webp",
@@ -271,20 +240,13 @@
           ],
         },
         artemis: {
-          category: "Book design",
+          category: "Special Edition",
           title: "Artemis Fowl",
           overview:
             "A sleek, playful project that brought a whimsical tone to the printed extras while remaining polished and professional.",
           role: "Illustrator",
           medium: "Overlays",
-          year: "2026",
-          story:
-            "The design focused on movement, curiosity, and personality, allowing the overlays to support the book without overwhelming it. The final result feels fun and polished at the same time.",
-          highlights: [
-            "Created layered decorative pieces",
-            "Used playful composition to support the tone",
-            "Delivered a clean editorial finish",
-          ],
+          company: "LitPins&Co",
           compactImages: [],
           images: [
             {
@@ -310,8 +272,7 @@
         project.overview;
       document.getElementById("project-role").textContent = project.role;
       document.getElementById("project-medium").textContent = project.medium;
-      document.getElementById("project-year").textContent = project.year;
-      document.getElementById("project-story").textContent = project.story;
+      document.getElementById("project-company").textContent = project.company;
 
       const imageGrid = document.getElementById("project-images");
       const secondaryImageGrid = document.getElementById(
@@ -364,13 +325,6 @@
         secondaryImageGrid.innerHTML = "";
       }
       renderImageGrid(imageGrid, mainImages);
-
-      const highlights = document.getElementById("project-highlights");
-      project.highlights.forEach((item) => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        highlights.appendChild(li);
-      });
     </script>
   </body>
 </html>

@@ -32,7 +32,7 @@
 }
 
 html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 80px;
   overflow-x: hidden;
 }
 
@@ -165,7 +165,7 @@ header {
   align-items: center;
   border-bottom: #dfe7ff solid 1px;
   margin: 85px auto 0;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   position: relative;
   overflow: hidden;
 }
@@ -175,7 +175,9 @@ header {
 }
 
 #home img {
-  width: clamp(675px, 100%, 1000px);
+  /* width: clamp(620px, 100%, 1200px); */
+  width: 100%;
+  min-width: 620px;
 }
 
 #home h1 {
@@ -206,6 +208,16 @@ header {
 #work h2 {
   font-size: 2rem;
   margin-bottom: 24px;
+}
+
+.work-subheading {
+  text-align: left;
+  margin: 24px 0;
+}
+
+.work-subheading::before {
+  content: "✦";
+  padding: 8px;
 }
 
 #categories {
@@ -280,7 +292,7 @@ header {
   gap: 16px;
   width: 100%;
   max-width: 1000px;
-  margin: 48px auto 0;
+  /* margin: 48px auto 0; */
 }
 
 .project-card {
@@ -579,7 +591,7 @@ header {
 
 #about-pic {
   position: relative;
-  width: 260px;
+  width: 310px;
   display: block;
   border: var(--cream) 1px solid;
   margin-left: auto;
@@ -593,7 +605,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  width: 300px;
+  width: 350px;
   max-width: none;
 }
 
@@ -661,6 +673,10 @@ header {
 @media screen and (max-width: 768px) {
   .masonry-container {
     column-count: 2;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
   }
 
   .project-image-grid {
