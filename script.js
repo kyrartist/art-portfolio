@@ -1,23 +1,32 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
-  // gsap code here!
+
+  const revealItems = (items) => {
+    if (!items?.length) return;
+
+    gsap.killTweensOf(items);
+    gsap.fromTo(
+      items,
+      { autoAlpha: 0, y: 17 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.15,
+        duration: 0.7,
+        ease: "power2.out",
+        overwrite: "auto",
+      },
+    );
+  };
+
   ScrollTrigger.batch(".masonry-item", {
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        autoAlpha: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: "sine.out",
-      }),
+    once: true,
+    onEnter: (batch) => revealItems(batch),
   });
+
   ScrollTrigger.batch(".project-card", {
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        autoAlpha: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: "sine.out",
-      }),
+    once: true,
+    onEnter: (batch) => revealItems(batch),
   });
 });
 
@@ -113,6 +122,15 @@ categories.forEach((category) => {
     Object.entries(categoryGrids).forEach(([name, grid]) => {
       if (grid) {
         grid.hidden = name !== selectedCategory;
+
+        if (name === selectedCategory) {
+          const items = Array.from(
+            grid.querySelectorAll(".masonry-item, .project-card"),
+          );
+
+          requestAnimationFrame(() => revealItems(items));
+          ScrollTrigger.refresh();
+        }
       }
     });
   });
