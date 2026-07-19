@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyra Lee | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,10 +19,41 @@
           </a>
         </div>
 
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <div class="nav-links" id="nav-links">
           <a class="nav-link" href="index.html#work">My Work</a>
           <a class="nav-link" href="index.html#about">About</a>
           <a class="nav-link" href="index.html#contact">Contact</a>
+          <a
+            class="social-icon"
+            href="https://www.instagram.com/kyrartist/"
+            target="_blank"
+            rel="noreferrer"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/kyrallee/"
+            class="social-icon"
+            target="_blank"
+            rel="noreferrer"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a
+            class="social-icon"
+            target="_blank"
+            href="mailto:kyrartist@gmail.com"
+            rel="noreferrer"
+            ><i class="bi bi-envelope-fill"></i
+          ></a>
         </div>
       </nav>
     </header>
@@ -31,7 +66,7 @@
       </div>
     </div>
 
-    <main class="container project-page">
+    <main class="project-page">
       <span id="project-top"></span>
       <a class="button back-link" href="index.html#work">← Back to portfolio</a>
       <article id="project-detail" class="project-detail-card">
@@ -79,61 +114,61 @@
           company: "LitPins&Co",
           compactImages: [
             {
-              src: "assets/vicious-project/vicious_endpapers_front final.webp",
+              src: "assets/vicious-project/vicious_endpapers_front-final.jpg",
               caption: "",
             },
             {
-              src: "assets/vicious-project/vicious_endpapers_back final.webp",
+              src: "assets/vicious-project/vicious_endpapers_back-final.jpg",
               caption: "",
             },
           ],
           images: [
             {
-              src: "assets/vicious-project/thud thud thud.webp",
+              src: "assets/vicious-project/thud-thud-thud.jpg",
               caption: `"Sydney leaned forward, her short blond hair falling into her eyes, and began to dig. The two worked in the dark, only Victor's occasional humming and the thud of the shovels filling the air. Thud. Thud. Thud."`,
             },
             {
-              src: "assets/vicious-project/vic syd meet.webp",
+              src: "assets/vicious-project/vic-syd-meet.jpg",
               caption: `"The rain fell, steady and cold, around them...The figure looked up at him then, and the wet hood of the coat fell back onto a pair of narrow shoulders. Water blue eyes, fierce behind smudged black liner, stared up at him from a young face."`,
             },
             {
-              src: "assets/vicious-project/eli_eo_scene.webp",
+              src: "assets/vicious-project/eli_eo_scene.jpg",
               caption: `"Eli lifted one bare foot to the rim of the bath, gazing down at the contents. 'I put my life into His hands.' 'Well,' said Victor, earnestly, 'let's hope He gives it back.' Eli nodded, and took a short breath—Victor imagined he could hear the faintest waver in it—before he climbed into the tub."`,
             },
             {
-              src: "assets/vicious-project/overlay-victor-eo-scene.webp",
+              src: "assets/vicious-project/overlay-victor-eo-scene.jpg",
               caption: `"The dial went up. He wished for the first time in his life that he believed in God. The dial went up. He felt his heart skip a beat, felt it grind and then double. The dial went up. He heard a machine warn, then alarm. The dial went up. And everything stopped."`,
             },
             {
-              src: "assets/vicious-project/citizen hero newspaper.webp",
+              src: "assets/vicious-project/citizen-hero-newspaper.jpg",
               caption: `"The paper called Eli a hero. The word made Victor laugh. Not just because it was absurd, but because it posed a question. If Eli really was a hero, and Victor meant to stop him, did that make him a villain? He took a long sip of his drink, tipped his head back against the couch, and decided he could live with that."`,
             },
             {
-              src: "assets/vicious-project/mitch hacking.webp",
+              src: "assets/vicious-project/mitch-hacking.jpg",
               caption: `"'Aren't all those records classified?' Asked Sydney. Mitch beamed and flicked open his laptop, settling in at the counter. 'Mitchell' said Victor. 'Tell Sydney what you were in prison for.' 'Hacking,' he said cheerfully."`,
             },
             {
-              src: "assets/vicious-project/overlay_IMadeAFriend.webp",
+              src: "assets/vicious-project/overlay_IMadeAFriend.jpg",
               caption: `"It was a stick-figure drawing. Two people holding hands. A thin man in black and a girl, half his height with short hair, and wide eyes...Beneath the drawing ran a single sentence: I made a friend."`,
             },
             {
-              src: "assets/vicious-project/syd resurrects dol.webp",
+              src: "assets/vicious-project/syd-resurrects-dol.jpg",
               caption: `"Her breath hovered in a cloud in front of her lips, and her face tightened in pain...The bones cracked back into place, the chest inflated, the rib cage reformed, and the legs stretched. And then the beast sat up...The dog was...huge. And very much alive."`,
             },
             {
-              src: "assets/vicious-project/vic_eli_call.webp",
+              src: "assets/vicious-project/vic_eli_call.jpg",
               caption: `"Victor flashed a sharp, dark smile, cracked his neck, and answered the call...He closed his eyes when he spoke, savoring the moment of quiet on the other end. If he concentrated, he could almost imagine Eli tensing at the sound of his voice. 'Victor' said Eli."`,
             },
             {
-              src: "assets/vicious-project/vic_eli_fight.webp",
+              src: "assets/vicious-project/vic_eli_fight.jpg",
               caption: `"Victor smiled. He was having a fabulous time killing Eli. Every time he thought his friend had given up, he pulled himself back together, and gave Victor the chance to try again."`,
             },
             {
-              src: "assets/vicious-project/vic sees eli at bar.webp",
+              src: "assets/vicious-project/vic-sees-eli-at-bar.jpg",
               caption: `"He scanned, searching the frozen faces of the crowd. And then he saw him. Victor ground to a halt, jarring Dominic backwards... Victor wondered how he could know that man without seeing his face. It was the posture, the broad shoulders and the arrogant way he held them, the edge of his sharp jaw visible as he turned away. Eli."`,
             },
             {
-              src: "assets/vicious-project/overlay_EliSydneyBullet.webp",
+              src: "assets/vicious-project/overlay_EliSydneyBullet.jpg",
               caption: `"And then the darkness moved around her, and a pair of hands reached out of nothing and jerked her backward into nothing with them. Eli pulled the trigger and the bullet hit the plastic sheeting where the girl had been."`,
             },
           ],
@@ -142,70 +177,70 @@
           category: "Special Edition",
           title: "Lockwood & Co",
           overview:
-            "My second project with LitPins, this time for the creepy, yet charming Lockwood & Co series! My goal for these 15 page overlays was to push my composition, texture, and lighting to capture the character's spooky encounters throughout the series.",
+            "This was my second time working with LitPins, this time for the creepy, yet charming Lockwood & Co series! My goal for these 15 page overlays was to push my composition, texture, and lighting to capture the character's spooky encounters throughout the series.",
           role: "Illustrator & Designer",
           medium: "Page Overlays & Stickers",
           company: "LitPins&Co",
           compactImages: [],
           images: [
             {
-              src: "assets/lockwood-project/Annie_Ward_Ghost.webp",
+              src: "assets/lockwood-project/Annie_Ward_Ghost.jpg",
               caption: `"The dress and her limbs and her long fair hair all shone with dim, pale other-light, as if lit by something far away. As for her face...Her face was a solid wedge of darkness. No light reached it at all."`,
             },
             {
-              src: "assets/lockwood-project/The_Red_Room.png",
+              src: "assets/lockwood-project/The_Red_Room.jpg",
               caption: `"'Beyond this barrier is the place I told you of. The Red Room.' It was a sturdy wooden door, closed and locked, and no different from the others we'd passed — except for the mark upon it. Someone, at some time, had slashed a great rough X upon its central panel. One stroke was short, the other long; both were made with violence, scoured deep into the wood."`,
             },
             {
-              src: "assets/lockwood-project/The_Monks.png",
+              src: "assets/lockwood-project/The_Monks.jpg",
               caption: `"On the wall behind, the exultant shadows danced in triumph. I shuffled forward. Ahead of me, the brick-lined lip: the shaft of soft grey stones leading into peaceful darkness..."`,
             },
             {
-              src: "assets/lockwood-project/Bickerstaff_Ghost.webp",
+              src: "assets/lockwood-project/Bickerstaff_Ghost.jpg",
               caption: `"Glistening swirls of plasm, short and stubby like the feelers of anemones, flexed and curled outwards from the base of the apparition — but there were no arms or legs, just the plunging robe."`,
             },
             {
-              src: "assets/lockwood-project/Frozen_Relic_Man.webp",
+              src: "assets/lockwood-project/Frozen_Relic_Man.jpg",
               caption: `"His eyes were wide open, his face twisted into a paroxysm of such horror that even Lockwood went white and I had to look away."`,
             },
             {
-              src: "assets/lockwood-project/Lucy_Vs_Bickerstaff.webp",
+              src: "assets/lockwood-project/Lucy_Vs_Bickerstaff.jpg",
               caption: `"With a war-cry that was half screech, half gurgle, I spun the chain in a wild circle, slicing through the tips of the bone-white fingers, turning them to fizzing curls of mist. The ghost reared back."`,
             },
             {
-              src: "assets/lockwood-project/Jessica's_Room.webp",
+              src: "assets/lockwood-project/Jessica's_Room.jpg",
               caption: `"Superimposed on top of the bed was something else: a roughly oval, egg-shaped glow, tall as a person, blank and bright and coldly shimmering."`,
             },
             {
-              src: "assets/lockwood-project/Lucy_On_The_Banister.webp",
+              src: "assets/lockwood-project/Lucy_On_The_Banister.jpg",
               caption: `"In came the ghost, still smiling, grappling at the air. With a cry I threw myself away from it, over the banister; I swung out and over the awful drop, grasping the wood, twisting round to hang there as the shape drew near."`,
             },
             {
-              src: "assets/lockwood-project/The_Hollow_Boy.png",
+              src: "assets/lockwood-project/The_Hollow_Boy.jpg",
               caption: `"I saw his thin, pale face, twisted and terrible, his eyes dull and despairing. Yet, even so, he smiled at me, and the tenderness and grief contained within that smile made the image horrible beyond imagining."`,
             },
             {
-              src: "assets/lockwood-project/Cannibal_Ghost.png",
+              src: "assets/lockwood-project/Cannibal_Ghost.jpg",
               caption: `"Fingers curled around the edge of the door. The nails were broken and fouled with dirt."`,
             },
             {
-              src: "assets/lockwood-project/Haunted_Train.webp",
+              src: "assets/lockwood-project/Haunted_Train.jpg",
               caption: `"They sat bolt upright on facing seats, either side of the narrow central aisle. Close to, you could see that their skin, like their clothes, persisted only in papery flakes and sections. How dry and dusty they were — except for their eyes. Those were big and bright and moist as the eyes of toads, and all were fixed directly on us."`,
             },
             {
-              src: "assets/lockwood-project/The_Creeping_Shadow.png",
+              src: "assets/lockwood-project/The_Creeping_Shadow.jpg",
               caption: `"It was a congregation of the dead. The inhabitants of the churchyard rose and stood and looked towards the Creeping Shadow as it moved away, entirely disregarding them, out through the lych gate at the far end of the churchyard and up the lane in the direction of the woods."`,
             },
             {
-              src: "assets/lockwood-project/Fittes_Tomb_Mannequin_.webp",
+              src: "assets/lockwood-project/Fittes_Tomb_Mannequin_.jpg",
               caption: `"The mannequin wasn't far away now; and it was certainly getting faster, its joints entirely free of their wax surround. You could see nubs of bone working at the hips and ankles."`,
             },
             {
-              src: "assets/lockwood-project/Orpheus_Society.png",
+              src: "assets/lockwood-project/Orpheus_Society.jpg",
               caption: `"The blaze revealed the secretary of the Orpheus Society, long white hair pluming out around a giant pair of goggles, a loose-fitting chainmail suit hanging over his dark coat. His feet and shins were encased in the top of a pair of pneumatic iron stilt legs that adjusted, hissing, as he moved."`,
             },
             {
-              src: "assets/lockwood-project/Final_Ghost_Fight.webp",
+              src: "assets/lockwood-project/Final_Ghost_Fight.jpg",
               caption: `"Great splinters of glass blew outwards; shards capsized like toppling ice floes. After the first blinding flashes of magnesium fire, white smoke plumed sideways in saucer-shaped eruption clouds; and through this chaos of falling glass and spreading smoke, the liberated ghosts came swooping."`,
             },
           ],
@@ -220,11 +255,11 @@
           company: "LitPins&Co",
           compactImages: [
             {
-              src: "assets/vengeful-project/Vengeful_Endpage_Front.webp",
+              src: "assets/vengeful-project/Vengeful_Endpage_Front.jpg",
               caption: "",
             },
             {
-              src: "assets/vengeful-project/Vengeful_Endpage_Back.webp",
+              src: "assets/vengeful-project/Vengeful_Endpage_Back.jpg",
               caption: "",
             },
           ],

@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
+  // gsap code here!
+  ScrollTrigger.batch(".masonry-item", {
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        autoAlpha: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "sine.out",
+      }),
+  });
+  ScrollTrigger.batch(".project-card", {
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        autoAlpha: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "sine.out",
+      }),
+  });
+});
+
 // nav menu toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");

@@ -44,7 +44,7 @@ body {
 }
 
 section {
-  margin-bottom: 7rem !important;
+  margin-bottom: 150px !important;
 }
 
 h1,
@@ -212,7 +212,8 @@ header {
 
 .work-subheading {
   text-align: left;
-  margin: 24px 0;
+  /* margin: 24px 0; */
+  margin-bottom: 24px;
 }
 
 .work-subheading::before {
@@ -224,7 +225,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 300px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 24px auto;
   justify-content: center;
   gap: 8px;
 }
@@ -276,6 +277,8 @@ header {
   background: var(--cream);
   border: var(--black) solid 1px;
   overflow: hidden;
+  opacity: 0;
+  will-change: transform;
 }
 
 .masonry-item img {
@@ -286,13 +289,16 @@ header {
   cursor: pointer;
 }
 
+#personal-work {
+  margin-bottom: 32px;
+}
+
 .project-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   width: 100%;
   max-width: 1000px;
-  /* margin: 48px auto 0; */
 }
 
 .project-card {
@@ -301,6 +307,8 @@ header {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+  opacity: 0;
+  will-change: transform;
 }
 
 .project-card:hover h3 {
@@ -357,6 +365,8 @@ header {
 .project-page {
   padding-top: 8rem;
   padding-bottom: 4rem;
+  max-width: min(90vw, 1000px);
+  margin: auto;
 }
 
 .back-link {
@@ -375,10 +385,10 @@ header {
 }
 
 .project-detail-card {
-  background: var(--white);
-  border: 1px solid var(--blue-light);
-  border-radius: 8px;
-  padding: 2rem;
+  /* background: var(--white); */
+  /* border: 1px solid var(--blue-light); */
+  /* border-radius: 8px; */
+  /* padding: 2rem; */
 }
 
 .project-eyebrow {
