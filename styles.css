@@ -16,6 +16,13 @@
   --gray: #87878d;
   --red: #df4e36;
   --yellow: #ffc972;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --section-gap: 8rem;
 }
 
 *,
@@ -32,7 +39,7 @@
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
   overflow-x: hidden;
 }
 
@@ -44,7 +51,7 @@ body {
 }
 
 section {
-  margin-bottom: 150px !important;
+  margin-bottom: var(--section-gap) !important;
 }
 
 h1,
@@ -61,9 +68,10 @@ p {
 }
 
 .container {
+  max-width: 1100px;
   width: 100%;
-  padding: 1rem;
-  margin: auto;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 header {
@@ -106,7 +114,7 @@ header {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: var(--space-md);
 }
 
 .nav-links a {
@@ -176,27 +184,19 @@ header {
 #home img {
   width: 100%;
   min-width: 900px;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
-#home h1 {
-  font-family: "Cinzel Decorative", serif;
-  /* font-size: 4rem; */
-  font-size: clamp(2.9rem, 4vw + 1.5rem, 4rem);
+#home img:first-of-type {
+  position: relative;
+  z-index: 2;
 }
 
-#home h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-  color: var(--black);
-  font-family: "Karla", sans-serif;
-}
-
-#home h2::before,
-#home h2::after {
-  content: "✦";
-  /* ☆★✦✶✧ */
-  padding: 8px;
+#home img:last-of-type {
+  z-index: 1;
 }
 
 #work {
@@ -205,13 +205,12 @@ header {
 
 #work h2 {
   font-size: 2rem;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-lg);
 }
 
 .work-subheading {
   text-align: left;
-  /* margin: 24px 0; */
-  margin-bottom: 24px;
+  margin-bottom: var(--space-lg);
 }
 
 .work-subheading::before {
@@ -223,9 +222,9 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 300px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto var(--space-lg) auto;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 
 .category {
@@ -258,20 +257,19 @@ header {
 }
 
 #grid-container {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-lg);
 }
 
 .masonry-container {
   column-count: 4;
-  column-gap: 16px;
+  column-gap: var(--space-sm);
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .masonry-item {
   break-inside: avoid;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm);
   background: var(--cream);
   border: var(--black) solid 1px;
   overflow: hidden;
@@ -288,15 +286,14 @@ header {
 }
 
 #personal-work {
-  margin-bottom: 32px;
+  margin-bottom: var(--space-xl);
 }
 
 .project-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--space-sm);
   width: 100%;
-  max-width: 1000px;
 }
 
 .project-card {
@@ -336,7 +333,7 @@ header {
 }
 
 .project-text {
-  margin: 16px 0;
+  margin: var(--space-sm) 0;
 }
 
 .project-text h3 {
@@ -393,7 +390,7 @@ header {
 .project-overview {
   font-size: 1.05rem;
   max-width: 760px;
-  margin: .5rem 0 1.5rem;
+  margin: 0.5rem 0 1.5rem;
 }
 
 .project-meta {
@@ -572,7 +569,7 @@ header {
 }
 
 #about h2 {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-md);
 }
 
 #about h2::before {
@@ -583,6 +580,7 @@ header {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
+  padding: var(--space-md);
 }
 
 #about-pic-me {
@@ -629,7 +627,7 @@ header {
 
 #contact h2 {
   color: var(--white);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-md);
 }
 
 #contact h2::before {
@@ -647,12 +645,12 @@ header {
 }
 
 #socials {
-  margin-top: 16px;
+  margin-top: var(--space-md);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: var(--space-md);
 }
 
 @media screen and (max-width: 480px) {
@@ -661,7 +659,7 @@ header {
   }
 
   #contact-container {
-    padding: 16px;
+    padding: var(--space-md);
   }
 
   #contact-container {
@@ -741,8 +739,8 @@ header {
 
   .nav-links.active {
     max-height: 200px;
-    padding-top: 12px;
-    gap: 12px;
+    padding-top: var(--space-md);
+    gap: var(--space-md);
     opacity: 1;
     pointer-events: auto;
   }
@@ -752,11 +750,7 @@ header {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .container {
-    width: 1000px;
-  }
-
+@media screen and (min-width: 1100px) {
   #about .container {
     padding: 40px 80px;
   }
