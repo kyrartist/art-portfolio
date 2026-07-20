@@ -165,7 +165,6 @@ header {
   align-items: center;
   border-bottom: #dfe7ff solid 1px;
   margin: 85px auto 0;
-  /* background-color: var(--white); */
   position: relative;
   overflow: hidden;
 }
@@ -382,13 +381,6 @@ header {
   margin: 3rem auto 0;
   display: block;
   width: fit-content;
-}
-
-.project-detail-card {
-  /* background: var(--white); */
-  /* border: 1px solid var(--blue-light); */
-  /* border-radius: 8px; */
-  /* padding: 2rem; */
 }
 
 .project-eyebrow {

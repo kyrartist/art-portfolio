@@ -1,23 +1,24 @@
+// fade-in on scroll
+const revealItems = (items) => {
+  if (!items?.length) return;
+
+  gsap.killTweensOf(items);
+  gsap.fromTo(
+    items,
+    { autoAlpha: 0, y: 17 },
+    {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 0.7,
+      ease: "power2.out",
+      overwrite: "auto",
+    },
+  );
+};
+
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
-
-  const revealItems = (items) => {
-    if (!items?.length) return;
-
-    gsap.killTweensOf(items);
-    gsap.fromTo(
-      items,
-      { autoAlpha: 0, y: 17 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        stagger: 0.15,
-        duration: 0.7,
-        ease: "power2.out",
-        overwrite: "auto",
-      },
-    );
-  };
 
   ScrollTrigger.batch(".masonry-item", {
     once: true,
@@ -28,6 +29,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     once: true,
     onEnter: (batch) => revealItems(batch),
   });
+
+  if (sessionStorage.getItem("scrollToWork")) {
+    sessionStorage.removeItem("scrollToWork");
+
+    window.addEventListener("load", () => {
+      document.getElementById("work")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
 });
 
 // nav menu toggle
@@ -48,6 +60,7 @@ if (menuToggle && navLinks) {
   });
 }
 
+// lightbox
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxCaption = document.getElementById("lightbox-caption");
@@ -136,6 +149,7 @@ categories.forEach((category) => {
   });
 });
 
+// hide/show navbar when scrolling up/down
 const header = document.querySelector("header");
 let lastScrollY = window.scrollY;
 
