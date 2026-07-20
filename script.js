@@ -10,7 +10,7 @@ const revealItems = (items) => {
       autoAlpha: 1,
       y: 0,
       stagger: 0.15,
-      duration: 0.7,
+      duration: 0.8,
       ease: "power2.out",
       overwrite: "auto",
     },
@@ -166,4 +166,31 @@ window.addEventListener("scroll", () => {
   }
 
   lastScrollY = window.scrollY;
+});
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  const slider = card.querySelector(".project-slider");
+
+  if (!slider) return;
+
+  const slides = slider.children;
+
+  let index = 0;
+  let interval;
+
+  card.addEventListener("mouseenter", () => {
+    interval = setInterval(() => {
+      index = (index + 1) % slides.length;
+
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }, 1200);
+  });
+
+  card.addEventListener("mouseleave", () => {
+    clearInterval(interval);
+
+    index = 0;
+
+    slider.style.transform = "translateX(0)";
+  });
 });

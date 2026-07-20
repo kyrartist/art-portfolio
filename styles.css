@@ -174,9 +174,8 @@ header {
 }
 
 #home img {
-  /* width: clamp(620px, 100%, 1200px); */
   width: 100%;
-  min-width: 620px;
+  min-width: 900px;
 }
 
 #home h1 {
@@ -394,7 +393,7 @@ header {
 .project-overview {
   font-size: 1.05rem;
   max-width: 760px;
-  margin-bottom: 1.5rem;
+  margin: .5rem 0 1.5rem;
 }
 
 .project-meta {
@@ -435,6 +434,8 @@ header {
 .project-image {
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  will-change: transform;
 }
 
 .project-image img {
