@@ -210,6 +210,7 @@ header {
 
 .work-subheading {
   text-align: left;
+  font-size: 1.3rem;
   margin-bottom: var(--space-lg);
 }
 
@@ -344,6 +345,10 @@ header {
   color: var(--gray);
 }
 
+#project-link {
+  margin: var(--space-sm) 0;
+}
+
 .button {
   background-color: var(--blue);
   color: var(--cream);
@@ -355,6 +360,12 @@ header {
 
 .button::before {
   content: "✦ ";
+}
+
+.button.secondary {
+  background-color: var(--cream);
+  border: var(--blue) 2px solid;
+  color: var(--blue);
 }
 
 .project-page {
@@ -389,7 +400,7 @@ header {
 
 .project-overview {
   font-size: 1.05rem;
-  max-width: 760px;
+  max-width: 700px;
   margin: 0.5rem 0 1.5rem;
 }
 
@@ -414,6 +425,32 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.3rem;
+}
+
+.project-video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-video {
+  width: 100%;
+}
+
+.project-video-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--black);
+  display: block;
+  background: var(--black);
+}
+
+.project-video-caption {
+  margin-top: 0.5rem;
+  color: var(--gray);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .project-image-grid {
@@ -470,6 +507,10 @@ header {
   font-size: 0.85rem;
   line-height: 1.4;
   max-width: 100%;
+}
+
+#egg-project-thumbnail {
+  background-color: #1e1e1e;
 }
 
 .project-body {
