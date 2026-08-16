@@ -701,7 +701,7 @@ header {
 
 @media screen and (max-width: 480px) {
   .masonry-container {
-    column-count: 1;
+    column-count: 1 !important;
   }
 
   #contact-container {
