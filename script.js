@@ -100,6 +100,63 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document
+  .querySelectorAll(".personal-concepts-grid img[data-hover-src]")
+  .forEach((image) => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
+    const defaultSrc = image.getAttribute("src");
+    const defaultAlt = image.alt;
+    const hoverSrc = image.dataset.hoverSrc;
+    const hoverAlt = image.dataset.hoverAlt || defaultAlt;
+    const preload = new Image();
+    const item = image.closest(".masonry-item");
+    let swapTimeout;
+
+    preload.src = hoverSrc;
+    item.style.backgroundImage = `url("${hoverSrc}")`;
+
+    image.addEventListener("mouseenter", () => {
+      clearTimeout(swapTimeout);
+      image.style.objectPosition = "50% center";
+      item.style.backgroundPosition = "50% center";
+      item.classList.add("is-swapping");
+      swapTimeout = setTimeout(() => {
+        image.src = hoverSrc;
+        image.alt = hoverAlt;
+        item.classList.remove("is-swapping");
+      }, 200);
+    });
+
+    image.addEventListener("mousemove", (event) => {
+      const bounds = item.getBoundingClientRect();
+      const edgeInset = 0.2;
+      const pointerRatio = (event.clientX - bounds.left) / bounds.width;
+      const position = Math.min(
+        100,
+        Math.max(0, ((pointerRatio - edgeInset) / (1 - edgeInset * 2)) * 100),
+      );
+
+      const objectPosition = `${position}% center`;
+      image.style.objectPosition = objectPosition;
+      item.style.backgroundPosition = objectPosition;
+    });
+
+    image.addEventListener("mouseleave", () => {
+      clearTimeout(swapTimeout);
+      image.style.objectPosition = "50% center";
+      item.style.backgroundPosition = "50% center";
+      item.classList.add("is-swapping");
+      swapTimeout = setTimeout(() => {
+        image.src = defaultSrc;
+        image.alt = defaultAlt;
+        item.classList.remove("is-swapping");
+      }, 200);
+    });
+  });
+
 if (lightboxClose) {
   lightboxClose.addEventListener("click", closeLightbox);
 }

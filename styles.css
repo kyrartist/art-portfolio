@@ -307,6 +307,27 @@ header {
   cursor: pointer;
 }
 
+.personal-concepts-grid .has-hover-image {
+  aspect-ratio: 4 / 5;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-position 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.personal-concepts-grid .has-hover-image img {
+  height: 100%;
+  object-position: 50% center;
+  transition:
+    opacity 0.3s ease-in-out,
+    object-position 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, object-position;
+}
+
+.personal-concepts-grid .has-hover-image.is-swapping img {
+  opacity: 0;
+}
+
 #personal-work {
   margin-bottom: var(--space-xl);
 }
@@ -834,6 +855,18 @@ header {
 
   #contact img {
     width: 40px;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .personal-concepts-grid .has-hover-image {
+    aspect-ratio: auto;
+  }
+
+  .personal-concepts-grid .has-hover-image img {
+    height: auto;
+    object-position: center;
+    transition: none;
   }
 }
 
