@@ -70,7 +70,7 @@ p {
 }
 
 .container {
-  width: min(85vw, 1200px);
+  width: min(90vw, 1300px);
   box-sizing: border-box;
   margin-inline: auto;
 }
@@ -507,7 +507,7 @@ header {
 .project-page {
   padding-top: 8rem;
   padding-bottom: 4rem;
-  width: min(85vw, 1200px);
+  width: min(90vw, 1300px);
   margin: auto;
 }
 
@@ -805,7 +805,7 @@ header {
   display: grid;
   place-items: center;
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 #contact h2 {
