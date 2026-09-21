@@ -975,9 +975,15 @@ header {
   color: var(--white);
 }
 
+#contact-container > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
 #socials {
-  margin-top: var(--space-md);
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1005,8 +1011,13 @@ header {
     grid-template-columns: 10% 80% 10%;
   }
 
-  #contact img {
-    width: 40px;
+  #contact-container > div:first-child,
+  #contact-container > div:last-child {
+    display: none;
+  }
+
+  #contact-container > div:nth-child(2) {
+    grid-column: 1 / -1;
   }
 }
 
