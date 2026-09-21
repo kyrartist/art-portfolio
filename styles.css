@@ -23,6 +23,7 @@
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
+  --space-xxl: 6rem;
   --section-gap: 8rem;
 }
 
@@ -408,7 +409,7 @@ header {
 }
 
 #personal-work {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-xxl);
 }
 
 .project-container {
@@ -473,7 +474,7 @@ header {
 }
 
 .project-card-kicker {
-  margin: 0;
+  margin-bottom: var(--space-xs) !important;
   color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 0.08em;
