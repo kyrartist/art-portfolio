@@ -221,21 +221,16 @@ header {
   padding: 8px;
 }
 
-.process-legend {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  width: fit-content;
-  margin: -1rem 0 var(--space-sm);
-  color: var(--gray);
-  font-size: 0.85rem;
-  text-align: left;
+.inline-process-star {
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0 0.15em;
+  vertical-align: -0.2em;
+  object-fit: contain;
 }
 
-.process-legend img {
-  width: 1.25rem;
-  height: 1.25rem;
-  object-fit: contain;
+.process-instructions {
+  display: none;
 }
 
 #categories {
@@ -298,6 +293,12 @@ header {
   margin-inline: auto;
 }
 
+#books-grid p {
+  text-align: left;
+  margin-bottom: var(--space-lg);
+  color: var(--gray);
+}
+
 .personal-concepts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -319,23 +320,59 @@ header {
 .masonry-item.process-item {
   position: relative;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .masonry-item.process-item:hover,
 .masonry-item.process-item:focus-visible {
+  border-color: var(--blue);
   transform: translateY(-3px);
 }
 
 .masonry-item.process-item .process-item-star {
   position: absolute;
-  top: 0.6rem;
-  left: 0.6rem;
+  top: 8px;
+  left: 8px;
   z-index: 1;
   width: 1.6rem;
   height: 1.6rem;
   object-fit: contain;
   pointer-events: none;
+}
+
+.masonry-item.process-item::after {
+  content: "Click to view process";
+  position: absolute;
+  top: 0.55rem;
+  left: 2.7rem;
+  z-index: 1;
+  padding: 0.35rem 0.55rem;
+  background: color-mix(in srgb, var(--blue-medium), transparent 10%);
+  color: var(--cream);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  width: max-content;
+  max-width: calc(100% - 3.2rem);
+  overflow: hidden;
+  visibility: hidden;
+  clip-path: inset(0 100% 0 0);
+  transition:
+    clip-path 0.25s ease,
+    visibility 0s linear 0.25s;
+  pointer-events: none;
+}
+
+.masonry-item.process-item:hover::after,
+.masonry-item.process-item:focus-visible::after {
+  visibility: visible;
+  clip-path: inset(0);
+  transition:
+    clip-path 0.25s ease,
+    visibility 0s linear 0s;
 }
 
 .masonry-item img {
@@ -396,14 +433,12 @@ header {
   border: 1px solid var(--black);
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease,
     border-color 0.25s ease;
 }
 
 .project-card:hover {
   transform: translateY(-3px);
   border-color: var(--blue);
-  box-shadow: 0 18px 40px rgba(4, 8, 90, 0.08);
 }
 
 .project-card-visual {
@@ -953,6 +988,10 @@ header {
     column-count: 1 !important;
   }
 
+  #books-grid p {
+    text-align: center;
+  }
+
   .personal-concepts-grid {
     grid-template-columns: 1fr !important;
   }
@@ -993,6 +1032,10 @@ header {
 
   .project-meta {
     grid-template-columns: 1fr;
+  }
+
+  .process-instructions {
+    display: block;
   }
 
   .project-image-grid {

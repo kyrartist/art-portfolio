@@ -136,7 +136,9 @@ document.addEventListener("click", (event) => {
 });
 
 document
-  .querySelectorAll(".personal-concepts-grid img[data-hover-src]")
+  .querySelectorAll(
+    ".personal-concepts-grid img[data-hover-src]:not([data-hover-disabled])",
+  )
   .forEach((image) => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       return;

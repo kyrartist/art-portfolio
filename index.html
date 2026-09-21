@@ -96,10 +96,15 @@
           <div id="books-grid">
             <div id="personal-work">
               <h3 class="work-subheading">Personal Concepts</h3>
-              <p>A collection of cover designs I created</p>
-              <p class="process-legend">
-                <img src="assets/Star.png" alt="" aria-hidden="true" />
-                Click to see how my design process for that cover!
+              <p class="process-instructions">
+                Click the books with a star
+                <img
+                  class="inline-process-star"
+                  src="assets/Star.png"
+                  alt="star"
+                  aria-hidden="true"
+                />
+                to view the process!
               </p>
               <div class="personal-concepts-grid">
                 <div
@@ -121,11 +126,13 @@
                   aria-label="View Project Hail Mary cover design process"
                   data-process-page="process.html?process=project-hail-mary"
                 >
+                <!-- remove the data-hover-disabled="true" to enable the dust jacket image on hover effect -->
                   <img
                     src="assets/books/Project-Hail-Mary.jpg"
                     alt="Project Hail Maray cover illustration"
                     data-hover-src="assets/books/Project-Hail-Mary---Jacket-Design.jpg"
                     data-hover-alt="Project Hail Mary jacket design"
+                    data-hover-disabled="true"
                   />
                 </div>
                 <div class="masonry-item">
