@@ -221,6 +221,23 @@ header {
   padding: 8px;
 }
 
+.process-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  margin: -1rem 0 var(--space-sm);
+  color: var(--gray);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.process-legend img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
 #categories {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -310,6 +327,17 @@ header {
   transform: translateY(-3px);
 }
 
+.masonry-item.process-item .process-item-star {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 1;
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 .masonry-item img {
   width: 100%;
   display: block;
@@ -326,7 +354,7 @@ header {
   transition: background-position 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.personal-concepts-grid .has-hover-image img {
+.personal-concepts-grid .has-hover-image img:not(.process-item-star) {
   height: 100%;
   object-position: 50% center;
   transition:
@@ -335,7 +363,9 @@ header {
   will-change: opacity, object-position;
 }
 
-.personal-concepts-grid .has-hover-image.is-swapping img {
+.personal-concepts-grid
+  .has-hover-image.is-swapping
+  img:not(.process-item-star) {
   opacity: 0;
 }
 

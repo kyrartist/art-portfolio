@@ -20,6 +20,17 @@ const revealItems = (items) => {
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
 
+  document
+    .querySelectorAll("#books-grid .masonry-item.process-item")
+    .forEach((item) => {
+      const star = document.createElement("img");
+      star.className = "process-item-star";
+      star.src = "assets/Star.png";
+      star.alt = "";
+      star.setAttribute("aria-hidden", "true");
+      item.prepend(star);
+    });
+
   ScrollTrigger.batch(".masonry-item", {
     once: true,
     onEnter: (batch) => revealItems(batch),
