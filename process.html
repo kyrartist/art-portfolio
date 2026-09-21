@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyra Lee | Design Process</title>
+    <link rel="icon" type="image/png" href="./assets/Star.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="nav-bar" class="container">
+        <div id="logo">
+          <a href="index.html">
+            <img src="assets/Star.png" alt="Kyra Lee Portfolio" />
+          </a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a class="nav-link" href="index.html#work">My Work</a>
+          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#contact">Contact</a>
+          <a
+            class="social-icon"
+            aria-label="Instagram"
+            href="https://www.instagram.com/kyrartist/"
+            target="_blank"
+            rel="noreferrer"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/kyrallee/"
+            class="social-icon"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noreferrer"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a
+            class="social-icon"
+            aria-label="Email"
+            href="mailto:kyrartist@gmail.com"
+            rel="noreferrer"
+            ><i class="bi bi-envelope-fill"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close image">×</button>
+      <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="" />
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <main id="process-top" class="project-page">
+      <a
+        class="button back-link"
+        href="index.html"
+        id="back-to-portfolio-button"
+        >← Back to portfolio</a
+      >
+
+      <article class="project-detail-card process-detail-page">
+        <div>
+          <p class="project-eyebrow">Design Process</p>
+          <h1 id="process-title">Project title</h1>
+          <p id="process-overview" class="project-overview"></p>
+        </div>
+
+        <div class="project-meta">
+          <div>
+            <span>Role</span>
+            <p id="process-role"></p>
+          </div>
+          <div>
+            <span>Project type</span>
+            <p id="process-type"></p>
+          </div>
+          <div>
+            <span>Tools</span>
+            <p id="process-tools"></p>
+          </div>
+        </div>
+
+        <div id="process-sections"></div>
+      </article>
+      <a href="#process-top" class="button process-back-to-top">Back to top</a>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const processProjects = [
+        {
+          key: "project-hail-mary",
+          title: "Project Hail Mary",
+          overview:
+            "Use this page to show the decisions, experiments, and refinements behind a finished design.",
+          role: "Illustrator & Designer",
+          type: "Book cover design",
+          tools: "Replace with your tools",
+          sections: [
+            {
+              title: "Starting point",
+              text: "Describe the brief, the story, or the question that guided your first ideas. What did you want the audience to feel or notice?",
+              images: [
+                {
+                  src: "assets/books/Project-Hail-Mary.jpg",
+                  alt: "Project Hail Mary initial cover concept",
+                  caption:
+                    "Replace this image with an early concept or reference board.",
+                },
+              ],
+            },
+            {
+              title: "Exploration",
+              text: "Talk through the directions you tested and why. This is a good place to explain rejected ideas, visual references, color studies, typography tests, or composition sketches.",
+              images: [
+                {
+                  src: "assets/books/Project-Hail-Mary---Jacket-Design.jpg",
+                  alt: "Project Hail Mary jacket design exploration",
+                  caption:
+                    "Replace this image with sketches, studies, or alternate directions.",
+                },
+                {
+                  src: "assets/books/Katabasis.jpg",
+                  alt: "Example visual exploration image",
+                  caption: "Add another process image here when needed.",
+                },
+              ],
+            },
+            {
+              title: "Final decisions",
+              text: "Explain what changed between the early work and the final piece. Share the details that made the design feel resolved and how the final choices served the story or brief.",
+              images: [
+                {
+                  src: "assets/books/Project-Hail-Mary---Jacket-Design.jpg",
+                  alt: "Project Hail Mary final jacket design",
+                  caption:
+                    "Replace this image with the final design or a detail view.",
+                },
+              ],
+            },
+          ],
+        },
+      ];
+
+      const processKey =
+        new URLSearchParams(window.location.search).get("process") ||
+        processProjects[0].key;
+      const processProject =
+        processProjects.find((item) => item.key === processKey) ||
+        processProjects[0];
+
+      document.getElementById("process-title").textContent =
+        processProject.title;
+      document.getElementById("process-overview").textContent =
+        processProject.overview;
+      document.getElementById("process-role").textContent = processProject.role;
+      document.getElementById("process-type").textContent = processProject.type;
+      document.getElementById("process-tools").textContent =
+        processProject.tools;
+
+      const processSections = document.getElementById("process-sections");
+
+      processProject.sections.forEach((section, index) => {
+        const sectionElement = document.createElement("section");
+        sectionElement.className = "process-section";
+
+        const heading = document.createElement("div");
+        heading.className = "process-section-heading";
+
+        const number = document.createElement("span");
+        number.className = "process-section-number";
+        number.textContent = String(index + 1).padStart(2, "0");
+
+        const title = document.createElement("h2");
+        title.textContent = section.title;
+        heading.append(number, title);
+
+        const content = document.createElement("div");
+        content.className = "process-section-content";
+
+        const text = document.createElement("p");
+        text.textContent = section.text;
+
+        const imageGrid = document.createElement("div");
+        imageGrid.className = "process-image-grid";
+
+        section.images.forEach((imageData) => {
+          const figure = document.createElement("figure");
+          figure.className = "project-image process-image";
+
+          const image = document.createElement("img");
+          image.src = imageData.src;
+          image.alt = imageData.alt;
+          image.dataset.caption = imageData.caption || "";
+
+          const caption = document.createElement("figcaption");
+          caption.className = "process-image-caption";
+          caption.textContent = imageData.caption || "";
+
+          figure.append(image, caption);
+          imageGrid.appendChild(figure);
+        });
+
+        content.append(text, imageGrid);
+        sectionElement.append(heading, content);
+        processSections.appendChild(sectionElement);
+      });
+
+      const backButton = document.getElementById("back-to-portfolio-button");
+
+      if (backButton) {
+        backButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          sessionStorage.setItem("scrollToWork", "true");
+          window.location.href = "index.html";
+        });
+      }
+    </script>
+  </body>
+</html>

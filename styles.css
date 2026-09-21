@@ -299,6 +299,17 @@ header {
   will-change: transform;
 }
 
+.masonry-item.process-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.masonry-item.process-item:hover,
+.masonry-item.process-item:focus-visible {
+  transform: translateY(-3px);
+}
+
 .masonry-item img {
   width: 100%;
   display: block;
@@ -352,7 +363,7 @@ header {
   opacity: 0;
   will-change: transform;
   background: var(--white);
-  border: 1px solid var(--gray-light);
+  border: 1px solid var(--black);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -526,6 +537,12 @@ header {
   width: fit-content;
 }
 
+.process-back-to-top {
+  display: block;
+  width: fit-content;
+  margin: 3rem auto 0;
+}
+
 .project-eyebrow {
   color: var(--blue);
   font-weight: 700;
@@ -668,6 +685,71 @@ header {
 
 .project-body li {
   line-height: 1.5;
+}
+
+.process-detail-page {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.process-section {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.35fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.process-section-heading {
+  align-self: start;
+}
+
+.process-section-number {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.process-section h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.process-section-content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.process-section-content p {
+  max-width: 650px;
+  line-height: 1.7;
+}
+
+.process-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.process-image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--black);
+}
+
+.process-image-caption {
+  margin-top: 0.5rem;
+  color: var(--gray);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.process-image {
+  opacity: 1;
 }
 
 .lightbox {
@@ -885,6 +967,15 @@ header {
 
   .project-image-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .process-image-grid {
+    grid-template-columns: 1fr;
   }
 
   .lightbox-content {

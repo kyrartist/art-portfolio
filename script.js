@@ -34,9 +34,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     sessionStorage.removeItem("scrollToWork");
 
     window.addEventListener("load", () => {
-      document.getElementById("work")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+      requestAnimationFrame(() => {
+        document.getElementById("work")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       });
     });
   }
@@ -66,6 +68,28 @@ const lightboxImage = document.getElementById("lightbox-image");
 const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
 
+function openProcessPage(item) {
+  const page = item.dataset.processPage || "process.html";
+  window.location.href = page;
+}
+
+document.addEventListener("click", (event) => {
+  const processItem = event.target.closest(".masonry-item.process-item");
+
+  if (processItem) {
+    openProcessPage(processItem);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  const processItem = event.target.closest(".masonry-item.process-item");
+
+  if (processItem && (event.key === "Enter" || event.key === " ")) {
+    event.preventDefault();
+    openProcessPage(processItem);
+  }
+});
+
 function openLightbox(src, alt, caption = "") {
   if (!lightbox || !lightboxImage) return;
 
@@ -90,7 +114,7 @@ document.addEventListener("click", (event) => {
     ".masonry-item img, .project-image img",
   );
 
-  if (clickedImage) {
+  if (clickedImage && !clickedImage.closest(".process-item")) {
     event.preventDefault();
     openLightbox(
       clickedImage.currentSrc || clickedImage.src,
