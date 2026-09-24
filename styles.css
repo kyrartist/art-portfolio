@@ -213,14 +213,14 @@ header {
 
 .work-subheading {
   text-align: left;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin-bottom: var(--space-lg);
 }
 
-.work-subheading::before {
+/* .work-subheading::before {
   content: "✦";
   padding: 8px;
-}
+} */
 
 .inline-process-star {
   width: 1.1em;
@@ -337,21 +337,22 @@ header {
   top: 8px;
   left: 8px;
   z-index: 1;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: clamp(1.25rem, 7%, 2rem);
+  height: auto;
   object-fit: contain;
   pointer-events: none;
 }
 
 .masonry-item.process-item::after {
-  content: "Click to view process";
+  content: "Click to view the design process!";
   position: absolute;
   top: 0.55rem;
   left: 2.7rem;
   z-index: 1;
   padding: 0.35rem 0.55rem;
-  background: color-mix(in srgb, var(--blue-light), transparent 20%);
+  background: color-mix(in srgb, var(--white), transparent 15%);
   border: 1px solid var(--blue);
+  box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.85);
   color: var(--blue);
   font-size: 0.75rem;
   font-weight: 700;
@@ -414,78 +415,136 @@ header {
 
 .project-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
   width: 100%;
 }
 
 .project-card {
-  display: grid;
-  grid-template-columns: minmax(220px, 1.1fr) minmax(0, 1.7fr);
-  gap: var(--space-lg);
-  align-items: center;
-  padding: 1.25rem;
-  text-align: left;
-  cursor: pointer;
+  display: block;
+  position: relative;
   color: inherit;
   text-decoration: none;
-  opacity: 0;
-  will-change: transform;
-  background: var(--white);
-  border: 1px solid var(--black);
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
+  background: transparent;
+  border: none;
+  transition: transform 0.25s ease;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
   transform: translateY(-3px);
-  border-color: var(--blue);
 }
 
 .project-card-visual {
+  position: relative;
   overflow: hidden;
-  border: var(--black) 1px solid;
-  background: var(--cream);
-  min-height: 260px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  padding: 0.75rem;
+  aspect-ratio: 16 / 10;
 }
 
-.project-card img,
-.project-card-placeholder {
+.project-card-visual:has(.project-card-placeholder) {
+  display: block;
+}
+
+.project-card-image-frame {
+  position: relative;
   display: block;
   width: 100%;
-  height: 280px;
+  height: 100%;
+  overflow: hidden;
+  border: 16px solid var(--white);
+  box-sizing: border-box;
+}
+
+.project-card-image-frame img,
+.project-card-placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   object-fit: cover;
   object-position: center;
+  border: none;
   transition: transform 0.35s ease;
 }
 
 .project-card:hover .project-card-visual img,
-.project-card:hover .project-card-placeholder {
+.project-card:hover .project-card-placeholder,
+.project-card:focus-visible .project-card-visual img,
+.project-card:focus-visible .project-card-placeholder {
   transform: scale(1.04);
 }
 
-.project-card-content {
+.project-card-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 15, 18, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover .project-card-visual::after,
+.project-card:focus-visible .project-card-visual::after {
+  opacity: 1;
+}
+
+.project-card-hover-meta {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
-  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+  padding: 1rem;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+.project-card:hover .project-card-hover-meta,
+.project-card:focus-visible .project-card-hover-meta {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card-kicker {
-  margin-bottom: var(--space-xs) !important;
-  color: var(--blue);
+  color: var(--gray);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  order: 2;
+}
+
+.project-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.project-card-content {
+  padding-top: 0.6rem;
 }
 
 .project-card-title {
+  order: 1;
   margin: 0;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  line-height: 1.05;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
   cursor: pointer;
   transition: color 0.25s ease;
 }
@@ -498,30 +557,7 @@ header {
 }
 
 .project-card-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem 1rem;
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--gray-light);
-}
-
-.project-card-meta div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.project-card-meta span {
-  font-size: 0.68rem;
-  color: var(--gray);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.project-card-meta strong {
-  font-size: 0.96rem;
-  font-weight: 600;
+  display: none;
 }
 
 .project-card-placeholder {
@@ -529,8 +565,6 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 260px;
-  height: 100%;
   text-align: center;
   background: var(--blue-light);
   border: 1px dashed rgba(28, 32, 36, 0.28);
@@ -542,21 +576,6 @@ header {
 
 .is-coming-soon {
   opacity: 0.9;
-}
-
-@media (max-width: 760px) {
-  .project-card {
-    grid-template-columns: 1fr;
-    padding: var(--space-sm);
-  }
-
-  .project-card-visual {
-    min-height: 220px;
-  }
-
-  .project-card-meta {
-    grid-template-columns: 1fr;
-  }
 }
 
 #project-link {
@@ -635,6 +654,7 @@ header {
   background: var(--blue-light);
   border-radius: 8px;
   padding: 0.9rem 1rem;
+  border: 1px solid var(--blue);
 }
 
 .project-meta span {
@@ -676,8 +696,8 @@ header {
 .project-image-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
 }
 
 .project-image-grid--compact {
@@ -799,6 +819,10 @@ header {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.process-image-grid > :only-child {
+  grid-column: 1 / -1;
 }
 
 .process-image-grid img {
@@ -1035,6 +1059,19 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-sm);
+  }
+
+  .project-card-visual {
+    min-height: 280px;
+  }
+
+  .project-card-meta {
+    grid-template-columns: 1fr;
+  }
+
   .masonry-container {
     column-count: 2;
   }

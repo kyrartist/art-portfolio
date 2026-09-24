@@ -95,7 +95,7 @@
         <div id="grid-container" class="container">
           <div id="books-grid">
             <div id="personal-work">
-              <h3 class="work-subheading">Personal Concepts</h3>
+              <h3 class="work-subheading">Personal Cover Designs</h3>
               <p class="process-instructions">
                 Click the books with a star
                 <img
@@ -104,7 +104,7 @@
                   alt="star"
                   aria-hidden="true"
                 />
-                to view the process!
+                to view their design process!
               </p>
               <div class="personal-concepts-grid">
                 <div
@@ -126,7 +126,7 @@
                   aria-label="View Project Hail Mary cover design process"
                   data-process-page="process.html?process=project-hail-mary"
                 >
-                <!-- remove the data-hover-disabled="true" to enable the dust jacket image on hover effect -->
+                  <!-- remove the data-hover-disabled="true" to enable the dust jacket image on hover effect -->
                   <img
                     src="assets/books/Project-Hail-Mary.jpg"
                     alt="Project Hail Maray cover illustration"
@@ -147,14 +147,34 @@
                     alt="The Secret History cover illustration"
                   />
                 </div>
-                <div class="masonry-item">
+                <div
+                  class="masonry-item process-item"
+                  tabindex="0"
+                  role="link"
+                  aria-label="Lockwood and Co cover design process"
+                  data-process-page="process.html?process=lockwood-and-co"
+                >
+                  <img
+                    src="assets/books/Lockwood-and-Co.jpg"
+                    alt="Lockwood and Co cover design"
+                  />
+                </div>
+                <div
+                  class="masonry-item"
+                  tabindex="0"
+                  role="link"
+                  aria-label="View Moon of the Turning Leaves cover design process"
+                  data-process-page="process.html?process=moon-of-the-turning-leaves"
+                >
                   <img
                     src="assets/books/Moon-of-the-Turning-Leaves---Mockup.jpg"
                     alt="Moon of the Turning Leaves cover design"
                   />
                 </div>
               </div>
-              <!-- <div class="project-container">
+            </div>
+
+            <!-- <div class="project-container">
                 <a class="project-card" href="project.html?project=egg">
                   <div class="project-img-frame">
                     <img
@@ -169,7 +189,6 @@
                   </div>
                 </a>
               </div> -->
-            </div>
             <div id="commission-work">
               <h3 class="work-subheading">Special Editions</h3>
               <div class="project-container">
@@ -178,27 +197,21 @@
                   href="project.html?project=vicious"
                 >
                   <div class="project-card-visual">
-                    <img
-                      src="assets/books/vicious-project-card.jpg"
-                      alt="Vicious cover art"
-                    />
+                    <div class="project-card-image-frame">
+                      <img
+                        src="assets/books/vicious-project-card.jpg"
+                        alt="Vicious cover art"
+                      />
+                    </div>
+                    <div class="project-card-hover-meta">
+                      <span>Endpapers &amp; Page overlays</span>
+                      <span>LitPins&amp;Co</span>
+                    </div>
                   </div>
                   <div class="project-card-content">
-                    <p class="project-card-kicker">V. E. Schwab</p>
-                    <h3 class="project-card-title">Vicious</h3>
-                    <div class="project-card-meta">
-                      <div>
-                        <span>Role</span>
-                        <strong>Illustrator &amp; Designer</strong>
-                      </div>
-                      <div>
-                        <span>Deliverables</span>
-                        <strong>Endpapers &amp; Page overlays</strong>
-                      </div>
-                      <div>
-                        <span>Company</span>
-                        <strong>LitPins&amp;Co</strong>
-                      </div>
+                    <div class="project-card-header">
+                      <span class="project-card-kicker">V. E. Schwab</span>
+                      <h3 class="project-card-title">Vicious</h3>
                     </div>
                   </div>
                 </a>
@@ -207,27 +220,21 @@
                   href="project.html?project=lockwood"
                 >
                   <div class="project-card-visual">
-                    <img
-                      src="assets/books/lockwood-project-card.jpg"
-                      alt="Lockwood and Co cover art"
-                    />
+                    <div class="project-card-image-frame">
+                      <img
+                        src="assets/books/lockwood-project-card.jpg"
+                        alt="Lockwood and Co cover art"
+                      />
+                    </div>
+                    <div class="project-card-hover-meta">
+                      <span>Page overlays</span>
+                      <span>LitPins&amp;Co</span>
+                    </div>
                   </div>
                   <div class="project-card-content">
-                    <p class="project-card-kicker">Jonathan Stroud</p>
-                    <h3 class="project-card-title">Lockwood &amp; Co</h3>
-                    <div class="project-card-meta">
-                      <div>
-                        <span>Role</span>
-                        <strong>Illustrator &amp; Designer</strong>
-                      </div>
-                      <div>
-                        <span>Deliverables</span>
-                        <strong>Page overlays</strong>
-                      </div>
-                      <div>
-                        <span>Company</span>
-                        <strong>LitPins&amp;Co</strong>
-                      </div>
+                    <div class="project-card-header">
+                      <span class="project-card-kicker">Jonathan Stroud</span>
+                      <h3 class="project-card-title">Lockwood &amp; Co</h3>
                     </div>
                   </div>
                 </a>
@@ -236,27 +243,21 @@
                   href="project.html?project=vengeful"
                 >
                   <div class="project-card-visual">
-                    <img
-                      src="assets/vengeful-project/Vengeful_Endpage_Front.jpg"
-                      alt="Vengeful endpaper detail"
-                    />
+                    <div class="project-card-image-frame">
+                      <img
+                        src="assets/vengeful-project/Vengeful_Endpage_Front.jpg"
+                        alt="Vengeful endpaper detail"
+                      />
+                    </div>
+                    <div class="project-card-hover-meta">
+                      <span>Endpapers &amp; Page overlays</span>
+                      <span>LitPins&amp;Co</span>
+                    </div>
                   </div>
                   <div class="project-card-content">
-                    <p class="project-card-kicker">V. E. Schwab</p>
-                    <h3 class="project-card-title">Vengeful</h3>
-                    <div class="project-card-meta">
-                      <div>
-                        <span>Role</span>
-                        <strong>Illustrator &amp; Designer</strong>
-                      </div>
-                      <div>
-                        <span>Deliverables</span>
-                        <strong>Endpapers &amp; Page overlays</strong>
-                      </div>
-                      <div>
-                        <span>Company</span>
-                        <strong>LitPins&amp;Co</strong>
-                      </div>
+                    <div class="project-card-header">
+                      <span class="project-card-kicker">V. E. Schwab</span>
+                      <h3 class="project-card-title">Vengeful</h3>
                     </div>
                   </div>
                 </a>
@@ -265,24 +266,38 @@
                   href="project.html?project=artemis"
                 >
                   <div class="project-card-visual">
-                    <div class="project-card-placeholder">Coming 2027</div>
+                    <div class="project-card-image-frame">
+                      <div class="project-card-placeholder">Coming 2027</div>
+                    </div>
+                    <div class="project-card-hover-meta">
+                      <span>Page overlays</span>
+                      <span>LitPins&amp;Co</span>
+                    </div>
                   </div>
                   <div class="project-card-content">
-                    <p class="project-card-kicker">Eoin Colfer</p>
-                    <h3 class="project-card-title">Artemis Fowl</h3>
-                    <div class="project-card-meta">
-                      <div>
-                        <span>Role</span>
-                        <strong>Illustrator &amp; Designer</strong>
-                      </div>
-                      <div>
-                        <span>Deliverables</span>
-                        <strong>Page overlays</strong>
-                      </div>
-                      <div>
-                        <span>Company</span>
-                        <strong>LitPins&amp;Co</strong>
-                      </div>
+                    <div class="project-card-header">
+                      <span class="project-card-kicker">Eoin Colfer</span>
+                      <h3 class="project-card-title">Artemis Fowl</h3>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  class="project-card case-study-card is-coming-soon"
+                  href="project.html?project=artemis"
+                >
+                  <div class="project-card-visual">
+                    <div class="project-card-image-frame">
+                      <div class="project-card-placeholder">Coming 2027</div>
+                    </div>
+                    <div class="project-card-hover-meta">
+                      <span>Page overlays</span>
+                      <span>LitPins&amp;Co</span>
+                    </div>
+                  </div>
+                  <div class="project-card-content">
+                    <div class="project-card-header">
+                      <span class="project-card-kicker">Rick Riordan</span>
+                      <h3 class="project-card-title">Percy Jackson</h3>
                     </div>
                   </div>
                 </a>
@@ -376,11 +391,11 @@
               <br />
               <br />
               My absolute favorite part of creating is immersing myself in a
-              story. When I draw, I feel the character's emotions and
+              story. While drawing, I feel the character's emotions and
               temporarily fall into their world. I find it exhilarating when I
-              feel I've truly captured the essence of a narrative. I think this
-              is why I gravitate towards drawing for books—they contain rich
-              stories with limitless opportunity for visual interpretation.
+              feel I've truly captured the essence of a narrative. This is why I
+              gravitate towards drawing for books—they contain rich stories with
+              limitless opportunity for visual interpretation.
               <br />
               <br />
               When I’m not drawing, I’m usually reading, running, becoming
