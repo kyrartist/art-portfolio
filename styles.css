@@ -72,7 +72,6 @@ p {
 
 .container {
   width: min(90vw, 1300px);
-  box-sizing: border-box;
   margin-inline: auto;
 }
 
@@ -217,11 +216,6 @@ header {
   margin-bottom: var(--space-lg);
 }
 
-/* .work-subheading::before {
-  content: "✦";
-  padding: 8px;
-} */
-
 .inline-process-star {
   width: 1.1em;
   height: 1.1em;
@@ -236,8 +230,9 @@ header {
 
 #categories {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 320px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* width: 320px; */
+  width: 210px;
   margin: 0 auto var(--space-xl) auto;
   justify-content: center;
   gap: var(--space-sm);
@@ -330,6 +325,15 @@ header {
 .masonry-item.process-item:focus-visible {
   border-color: var(--blue);
   transform: translateY(-3px);
+}
+
+.masonry-item.process-item img:not(.process-item-star) {
+  transition: transform 0.25s ease;
+}
+
+.masonry-item.process-item:hover img:not(.process-item-star),
+.masonry-item.process-item:focus-visible img:not(.process-item-star) {
+  transform: scale(1.04);
 }
 
 .masonry-item.process-item .process-item-star {
@@ -952,7 +956,6 @@ header {
   position: relative;
   width: 310px;
   display: block;
-  border: var(--cream) 1px solid;
   margin-left: auto;
   overflow: visible;
   border: solid 1px var(--blue-light);
@@ -1032,9 +1035,6 @@ header {
 
   #contact-container {
     padding: var(--space-md);
-  }
-
-  #contact-container {
     grid-template-columns: 10% 80% 10%;
   }
 
